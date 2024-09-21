@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Login</title>
+    <link rel="stylesheet" href="/css/folhalogin.css">
+    <script src="/js/script.js"></script>
+</head>
+<nav>
+    <a th:href="@{/home}"onclick="goBack()"><img class="back" src="/images/back-button.png" alt=""></a>
+    <h1>GreenCycle</h1>
+    <a th:href="@{/home}"><img class="back2" src="/images/icons8-logout-50.png" alt=""></a>
+
+</nav>
+
+<body class="page-login">
+    <div class="container">
+        <h1>Login</h1>
+
+        <form id="CadReserva" th:action="@{/acessar}" th:object="${login}" method="post" >
+        
+         
+            <div class="form-group">
+                <label>Usuário:</label>
+                <input type="text" id="email" th:field="*{email}" name="email" >
+            </div>
+            <div class="form-group">
+                <label for="password">Senha:</label>
+                <input type="password" id="senha" th:field="*{senha}" name="senha">
+            </div>
+            <input type="submit" value="Entrar" >
+            <div class="cad" >
+                <a th:href="@{esqueceusenha}" id="esqueci">Esqueci a senha</a>
+                <a th:href="@{cadastro}" id="esqueci">Cadastre-se</a> 
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>

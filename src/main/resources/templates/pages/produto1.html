@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="universalStyle.css">
+    <script src="script.js" defer></script> <!-- O arquivo JS com os objetos -->
+    <title>Detalhes do Produto</title>
+</head>
+<body>
+    <header>
+        <div class="interface">
+            <!-- Navegação principal -->
+            <nav class="nav-1">
+                <a href="#" class="links" onclick="goBack()">Voltar</a>
+                <a href="home.html" class="links">Home</a>
+                <a href="noticia.html" class="links">doações</a>
+                <a href="contato.html" class="links">Contato</a>
+            </nav>
+
+            <!-- Navegação adicional com menu suspenso -->
+            <nav class="navbar">
+                <ul class="nav-list">
+                    <li class="dropdown">
+                        <a href="#" class="links">Menu</a>
+                        <div class="dropdown-content">
+                            <a href="perfil.html">Perfil</a>
+                            <a href="sobre.html">Sobre</a>
+                            <a href="login.html">Login</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>  
+    </header>
+
+    <main>
+        <section class="product-description">
+            <div class="product-images">
+                <img id="main-image" src="alho-poro.jpg" alt="Produto Principal" class="main-image">
+                <div class="thumbnail-images">
+                    <img id="thumb-1" src="alho-poro2.jpg" alt="Imagem do Produto 1">
+                    <img id="thumb-2" src="" alt="Imagem do Produto 2">
+                    <img id="thumb-3" src="" alt="Imagem do Produto 3">
+                </div>
+            </div>
+            <div class="product-details">
+                <h1 id="product-name">Nome do Produto</h1>
+                <p id="product-price" class="price">R$ 199,99</p>
+                <p id="product-rating" class="rating">★★★★☆ (120 avaliações)</p>
+                <button class="buy-button" onclick="navigateToPage()">Adquirir</button>
+               <div class="product-info">
+                    <h2>Descrição</h2>
+                    <p id="product-description">Descrição do produto.</p>
+                    
+                    <h2>Especificações Técnicas</h2>
+                    <ul>
+                        <li><strong>Marca:</strong> <span id="product-brand">Marca Exemplo</span></li>
+                        <li><strong>Modelo:</strong> <span id="product-model">Modelo X</span></li>
+                        <li><strong>Cor:</strong> <span id="product-color">Preto</span></li>
+                        <li><strong>Dimensões:</strong> <span id="product-dimensions">30 x 20 x 15 cm</span></li>
+                        <li><strong>Peso:</strong> <span id="product-weight">1.5 kg</span></li>
+                    </ul>
+                </div>
+                <div class="reviews">
+                    <h2>Avaliações</h2>
+                    <div class="review">
+                        <p><strong>João Silva:</strong> <span id="review-1">Ótimo produto! Vale cada centavo.</span></p>
+                    </div>
+                    <div class="review">
+                        <p><strong>Maria Oliveira:</strong> <span id="review-2">A entrega foi rápida e o produto correspondeu às expectativas.</span></p>
+                    </div>
+                    <a href="avaliações.html" class="view-all-reviews">Ver todas as avaliações</a>
+                </div>
+            </div>
+        </section>
+    </main> 
+
+</body>
+</html>

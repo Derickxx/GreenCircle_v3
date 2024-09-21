@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <!-- Metadados do documento -->
+    <meta charset="UTF-8"> <!-- Define a codificação de caracteres para UTF-8 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Compatibilidade com o modo de renderização mais recente do IE -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Controle de layout em dispositivos móveis -->
+    <meta name="description" content="Doe para ajudar causas ecológicas e sociais. Transforme seu desapego em ação positiva!"> <!-- Descrição do site para SEO -->
+    <meta name="keywords" content="doação, ecológico, caridade, ajudar, sustentabilidade"> <!-- Palavras-chave para SEO -->
+    <!-- Link para o arquivo de estilo do Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Link para o arquivo de estilo personalizado -->
+    <link rel="stylesheet" href="/css/universalStyle.css">
+    <!-- Script JavaScript para a funcionalidade da página -->
+    <script src="/images/script.js" ></script>
+    <!-- Título da página -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenCicle</title>
+</head>
+<body>
+    <header class="search-header">
+        <div class="search-container">
+            <input type="text" id="search" placeholder="Pesquisar...">
+            <button type="button" id="search-button" onclick="filtro()">Buscar</button>
+        </div>
+    </header>
+    <!-- Cabeçalho da página -->
+    <header>
+        <div class="interface">
+            <!-- Navegação principal -->
+            <nav class="nav-1">
+                <a href="home.html" class="links">Home</a>
+                <a href="noticia.html" class="links">Doações</a>
+                <a href="contato.html" class="links">Contato</a>
+            </nav>
+
+            <!-- Navegação adicional com menu suspenso -->
+            <nav class="navbar">
+                <ul class="nav-list">
+                    <li class="dropdown">
+                        <a href="#" class="links">Menu</a>
+                        <div class="dropdown-content">
+
+                            <a href="perfil.html">Perfil</a>
+                            <a href="sobre.html">Sobre</a>
+                            <a th:href="@{/login}">Login</a>
+                            
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>  
+    </header>
+
+    <!-- Seção principal com chamada para ação -->
+    <section class="faixa">
+        <div class="title-content">
+            <h1 class="title-1">Quero <span>doar</span></h1>
+            <p class="p-1">Doar é muito importante e você pode ajudar muitas pessoas. Cadastre-se.</p>
+            <a class="btn-link" href="cadastro.html">
+                <button type="button" class="btn-2">Quero doar agora</button>
+            </a>
+            <a class="btn-link" href="#destaques">
+                <button type="button" class="btn-3">Destaques</button>
+            </a>
+        </div>
+    </section>  
+
+    <!-- Seção sobre doações ecológicas -->
+    <section class="donation-info fade-in">
+        <div class="title-eco">
+            <h1 class="title-2">Doações <span>Eco</span></h1>
+            <p class="p-2">Optar pela doação ecológica é um passo simples, mas poderoso, para criar um futuro mais sustentável. <br> Transforme seu desapego em uma ação positiva para o planeta!</p>
+        </div>
+
+        <!-- Artigo com cards de doações -->
+        <article class="main">
+            <div class="card-master">
+                <div class="card">
+                    <div class="card-content">
+                        <h2 class="card-title">Semente</h2>
+                        <p class="card-description">Descrição do Semente.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-master">
+                <div class="card-1">
+                    <div class="card-content">
+                        <h2 class="card-title">Adubo</h2>
+                        <p class="card-description">Descrição do Adubo.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-master">
+                <div class="card-2">
+                    <div class="card-content">
+                        <h2 class="card-title">Muda</h2>
+                        <p class="card-description">Descrição da Muda.</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </section>
+
+
+    
+    <!-- Seção com destaques do mês -->
+    <section id="destaques-mes" class="highlight-cards fade-in">
+        <div class="container">
+            <h2 class="title-2" id="destaques">Destaques do Mês</h2>
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="card bg-dark text-white">
+                        <img src="/images/destaque-mes1.jpg" class="card-img" alt="Destaque do Mês 1">
+                        <div class="card-img-overlay">
+                            <h5 class="card-title">Destaque do Mês 1</h5>
+                            <p class="card-text">Descrição do destaque do mês 1.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Repetir os cards para cada destaque do mês -->
+                <div class="col-md-2">
+                    <div class="card bg-dark text-white">
+                        <img src="/images/destaque-mes2.jpg" class="card-img" alt="Destaque do Mês 2">
+                        <div class="card-img-overlay">
+                            <h5 class="card-title">Destaque do Mês 2</h5>
+                            <p class="card-text">Descrição do destaque do mês 2.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="card bg-dark text-white">
+                        <img src="/images/destaque-mes3.jpg" class="card-img" alt="Destaque do Mês 3">
+                        <div class="card-img-overlay">
+                            <h5 class="card-title">Destaque do Mês 3</h5>
+                            <p class="card-text">Descrição do destaque do mês 3.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="card bg-dark text-white">
+                        <img src="/images/destaque-mes4.jpg" class="card-img" alt="Destaque do Mês 4">
+                        <div class="card-img-overlay">
+                            <h5 class="card-title">Destaque do Mês 4</h5>
+                            <p class="card-text">Descrição do destaque do mês 4.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="card bg-dark text-white">
+                        <img src="/images/destaque-mes5.jpg" class="card-img" alt="Destaque do Mês 5">
+                        <div class="card-img-overlay">
+                            <h5 class="card-title">Destaque do Mês 5</h5>
+                            <p class="card-text">Descrição do destaque do mês 5.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção do carrossel de imagens -->
+    <div class="carrossel fade-in">
+        <div class="slides">
+            <div class="slide">
+                <img src="/images/planet.jpg" alt="Imagem 1">
+            </div>
+            <div class="slide">
+                <img src="/images/ibama.jpg" alt="Imagem 2">
+            </div>
+            <div class="slide">
+                <img src="/images/turtle.jpg" alt="Imagem 3">
+            </div>
+        </div>
+        <!-- Botões de navegação do carrossel -->
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+
+    <!-- Seção do catálogo de produtos -->
+    <div class="catalog">
+        <h1>Catálogo de Produtos</h1>
+        <div class="product-list">
+            <!-- Exemplo de produto -->
+            <div class="product">
+                <img src="/images/flor6.jpg" alt="Produto 1">
+                <h2>Produto 1</h2>
+                <p>Descrição do produto 1.</p>
+                <span class="price">quatidade: 12</span>
+                <a href="produto1.html" class="btn-product">Ver Produto</a>
+            </div>
+            <!-- Repetir para cada produto -->
+            <div class="product">
+                <img src="/images/flor6.jpg" alt="Produto 2">
+                <h2>Produto 2</h2>
+                <p>Descrição do produto 2.</p>
+                <span class="price">quatidade: 09</span>
+                <a href="produto2.html" class="btn-product">Ver Produto</a>
+            </div>
+            <div class="product">
+                <img src="/images/flor6.jpg" alt="Produto 3">
+                <h2>Produto 3</h2>
+                <p>Descrição do produto 3.</p>
+                <span class="price">quatidade: 07</span>
+                <a href="produto6.html" class="btn-product">Ver Produto</a>
+            </div>
+            <div class="product">
+                <img src="/images/flor6.jpg" alt="Produto 4">
+                <h2>Produto 4</h2>
+                <p>Descrição do produto 4.</p>
+                <span class="price">quatidade: 11</span>
+                <a href="produto6.html" class="btn-product">Ver Produto</a>
+            </div>
+            <div class="product">
+                <img src="/images/flor6.jpg" alt="Produto 5">
+                <h2>Produto 5</h2>
+                <p>Descrição do produto 5.</p>
+                <span class="price">quatidade: 22</span>
+                <a href="produto5.html" class="btn-product">Ver Produto</a>
+            </div>
+            <div class="product">
+                <img src="/images/flor6.jpg" alt="Produto 6">
+                <h2>Produto 6</h2>
+                <p>Descrição do produto 6.</p>
+                <span class="price">quatidade: 01</span>
+                <a href="produto6.html" class="btn-product">Ver Produto</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rodapé da página -->
+    <footer class="end">
+        <p>&copy; 2024 GreenCicle. Todos os direitos reservados.</p>
+    </footer>
+    
+</body>
+</html>

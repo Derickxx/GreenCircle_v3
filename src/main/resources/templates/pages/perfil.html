@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Usuário</title>
+    <link rel="stylesheet" href="/css/universalStyle.css"> <!-- Inclua o CSS padrão aqui -->
+    <script src="/js/script.js"></script>
+    <style>
+        .profile-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        .profile-header img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 20px;
+            object-fit: cover;
+        }
+
+        .profile-header h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .profile-header p {
+            margin: 5px 0;
+            color: #666;
+        }
+
+        .profile-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .profile-details label {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .profile-details p {
+            margin: 5px 0;
+            color: #333;
+        }
+
+        .profile-actions {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .profile-actions button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .profile-actions button:hover {
+            background-color: #0056b3;
+        }
+
+        .edit-profile-form,
+        .confirm-delete {
+            display: none;
+            margin-top: 20px;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .edit-profile-form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        .edit-profile-form input,
+        .edit-profile-form select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .edit-profile-form button {
+            background-color: #28a745;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            color:aliceblue;
+            border: none;
+        }
+
+        .edit-profile-form button:hover {
+            background-color: #218838;
+            color:aliceblue;
+        }
+
+        .confirm-delete button {
+            background-color: #dc3545;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            color:aliceblue;
+            border: none;
+        }
+
+        .confirm-delete button:hover {
+            background-color: #c82333;
+            color:aliceblue;
+        }
+    </style>
+</head>
+<body>
+<header class="search-header">
+    <div class="search-container">
+        <input type="text" id="search" placeholder="Pesquisar...">
+        <button type="button" id="search-button" onclick="filtro()">Buscar</button>
+    </div>
+</header>
+<!-- Cabeçalho da página -->
+
+<!--
+<header>
+    <div class="interface">
+        
+        <nav class="nav-1">
+            <a href="home.html" class="links">Home</a>
+            <a href="noticia.html" class="links">Doações</a>
+            <a href="contato.html" class="links">Contato</a>
+        </nav>
+
+        
+        <nav class="navbar">
+            <ul class="nav-list">
+                <li class="dropdown">
+                    <a href="#" class="links">Menu</a>
+                    <div class="dropdown-content">
+
+                        <a href="perfil.html">Perfil</a>
+                        <a href="sobre.html">Sobre</a>
+                        <a href="login.html">Login</a>
+
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+-->
+
+	<div th:replace="~{fragments :: cabecalho}"></div>
+
+    <div class="profile-container">
+        <div class="profile-header">
+            <img id="profile-avatar" src="avatar.jpg" alt="Avatar do Usuário">
+            <div>
+                <h1 id="profile-name">Nome do Usuário</h1>
+                <p id="profile-email">Email: usuario@example.com</p>
+                <p id="profile-phone">Telefone: (11) 1234-5678</p>
+            </div>
+        </div>
+        <div class="profile-details">
+            <label for="address">Endereço:</label>
+            <p id="profile-address">Rua Exemplo, 123 - Bairro Exemplo</p>
+            
+            <label for="dob">Data de Nascimento:</label>
+            <p id="profile-dob">01/01/1990</p>
+
+
+        <div class="profile-actions">
+            <button onclick="toggleEditForm()">Editar Perfil</button>
+            <button onclick="toggleDeleteConfirmation()">Excluir Perfil</button>
+        </div>
+
+        <div class="edit-profile-form" id="edit-profile-form">
+            <h2>Editar Perfil</h2>
+            <label for="edit-avatar">Foto de Perfil:</label>
+            <input type="file" id="edit-avatar" accept="image/*" onchange="previewImage(event)">
+            <img id="preview-avatar" style="display: none; width: 100px; height: 100px; border-radius: 50%; margin-top: 10px; object-fit: cover;">
+            
+            <label for="edit-name">Nome:</label>
+            <input type="text" id="edit-name" value="Nome do Usuário">
+            
+            <label for="edit-email">Email:</label>
+            <input type="email" id="edit-email" value="usuario@example.com">
+            
+            <label for="edit-phone">Telefone:</label>
+            <input type="text" id="edit-phone" value="(11) 1234-5678">
+            
+            <label for="edit-address">Endereço:</label>
+            <input type="text" id="edit-address" value="Rua Exemplo, 123 - Bairro Exemplo">
+            
+            <label for="edit-dob">Data de Nascimento:</label>
+            <input type="date" id="edit-dob" value="1990-01-01">
+            
+
+            
+            <button onclick="saveProfile()">Salvar</button>
+        </div>
+
+        <div class="confirm-delete" id="confirm-delete">
+            <h2>Confirmação de Exclusão</h2>
+            <p>Você tem certeza de que deseja excluir seu perfil?</p>
+            <button onclick="deleteProfile()">Excluir</button>
+            <button onclick="toggleDeleteConfirmation()">Cancelar</button>
+        </div>
+    </div>
+
+</body>
+</html>

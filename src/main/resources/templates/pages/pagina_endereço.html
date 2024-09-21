@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Compra</title>
+    <link rel="stylesheet" href="universalStyle.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <div class="interface">
+            <!-- Navegação principal -->
+            <nav class="nav-1">
+                <a href="#" class="links" onclick="goBack()">Voltar</a>
+                <a href="home.html" class="links">Home</a>
+                <a href="noticia.html" class="links">doações</a>
+                <a href="contato.html" class="links">Contato</a>
+            </nav>
+
+            <!-- Navegação adicional com menu suspenso -->
+            <nav class="navbar">
+                <ul class="nav-list">
+                    <li class="dropdown">
+                        <a href="#" class="links">Menu</a>
+                        <div class="dropdown-content">
+                            <a href="perfil.html">Perfil</a>
+                            <a href="sobre.html">Sobre</a>
+                            <a href="login.html">Login</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>  
+    </header>
+
+
+
+    <section class="compra-container">
+      
+        <!-- Formulário para coleta de dados do usuário -->
+        <form id="form-compra" action="/finalizar-compra" method="POST">
+            <div class="form-group">
+                <label for="nome">Nome Completo</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+            <div class="form-group">
+                <label for="endereco">Endereço</label>
+                <input type="text" id="endereco" name="endereco" required>
+            </div>
+            <div class="form-group">
+                <label for="cidade">Cidade</label>
+                <input type="text" id="cidade" name="cidade" required>
+            </div>
+            <div class="form-group">
+                <label for="estado">Estado</label>
+                <input type="text" id="estado" name="estado" required>
+            </div>
+            <div class="form-group">
+                <label for="cep">CEP</label>
+                <input type="text" id="cep" name="cep" required>
+            </div>
+            <div class="form-group">
+                <label for="telefone">Telefone</label>
+                <input type="tel" id="telefone" name="telefone" required>
+            </div>
+
+            <!-- Botão para finalizar a compra -->
+            <button type="button" id="finalizar-compra" onclick="popup()"  class="btn-checkout">Finalizar Compra</button>
+       
+        </form>
+    </section>
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <p>Obrigado pela sua compra!</p>
+            <p>Você será redirecionado para a página inicial.</p>
+            <button id="ok-button">OK</button>
+        </div>
+    </div>
+   
+    <footer>
+        <p>&copy; 2024 Meu Site de Compras. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>

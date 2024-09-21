@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliações do Produto</title>
+    <script src="/js/script.js"></script>
+  <style>
+ /* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo geral */
+body {
+    background-color: rgb(0, 0, 0);
+   ;
+}
+
+
+
+/* Cabeçalho */
+header .interface {
+    display: flex;
+    justify-content: space-around;
+    align-items: center; /* Centraliza verticalmente */
+    color: aliceblue;
+    width: 100%;
+    height: 5rem; /* Ajusta a altura do cabeçalho */
+    font-size: 1.875rem; /* 30px */
+    padding: 0 1rem; /* Adiciona espaçamento interno */
+}
+
+.links {
+    text-decoration: none;
+    color: green;
+    margin: 0 1rem; /* Ajusta o espaçamento horizontal entre links */
+    padding: 0 0.5rem;
+    position: relative;
+}
+
+.links:hover {
+    color: #bebebe;
+    cursor: pointer;
+}
+
+.links::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background-color: #bebebe;
+    transition: width 0.3s ease;
+}
+
+.links:hover::after {
+    width: 100%;
+}
+
+/* Navegação */
+.nav-1 {
+    display: flex;
+    justify-content: space-around;
+    margin: 2rem 0; /* Adiciona espaçamento vertical ao redor da navegação */
+}
+/* Navegação dropdown */
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-list li {
+    position: relative;
+    margin: 0 1rem; /* Espaçamento horizontal entre itens da lista */
+}
+
+.nav-list a {
+    display: block;
+    color: #fff;
+    padding: 0.875rem 1.25rem; /* Ajusta o padding dos itens da lista */
+    text-decoration: none;
+    text-align: center;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #bebebe;
+    padding: 0.75rem 1rem; /* Ajusta o padding dos itens dropdown */
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    color: chartreuse;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+header h1 {
+    margin: 0;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 1rem;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo principal */
+.product-reviews {
+    width: 90%;
+    margin: 2rem auto;
+}
+
+.product-info {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgb(0, 233, 58);
+    margin-bottom: 2rem;
+}
+
+.product-info h1 {
+    font-size: 1.75rem;
+    color: green;
+    margin-bottom: 0.5rem;
+}
+
+.product-info p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.reviews-section {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgb(0, 255, 55);
+}
+
+.reviews-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: green;
+}
+
+.review-list {
+    margin-top: 1rem;
+}
+
+.review {
+    border-bottom: 1px solid #bbbbbb;
+    padding: 1rem 0;
+}
+
+.review:last-child {
+    border-bottom: none;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.review-header h3 {
+    font-size: 1.25rem;
+    color: #333;
+}
+
+.rating {
+    font-size: 1.125rem;
+    color: #f5c518; /* Cor das estrelas */
+}
+
+.review p {
+    margin: 0.5rem 0 0;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+  </style>
+</head>
+<body>
+    <header>
+        <div class="interface">
+            <!-- Navegação principal -->
+            <nav class="nav-1">
+                <a href="#"class="links" onclick="goBack()">Voltar</a>
+                <a href="@{/home}" class="links">Home</a>
+                <a href="@{/noticia}" class="links">Notícia</a>
+                <a href="@{/contato}" class="links">Contato</a>
+            </nav>
+
+            <!-- Navegação adicional com menu suspenso -->
+            <nav class="navbar">
+                <ul class="nav-list">
+                    <li class="dropdown">
+                        <a href="#" class="links">Menu</a>
+                        <div class="dropdown-content">
+                            <a href="@{/perfil}">Perfil</a>
+                            <a href="@{/sobre}">Sobre</a>
+                            <a href="@{/login}">Login</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>  
+    </header>
+
+    <main>
+        <section class="product-reviews">
+            <div class="product-info">
+                <h1>Nome do Produto</h1>
+                <p>Descrição breve do produto.</p>
+            </div>
+            <div class="reviews-section">
+                <h2>Avaliações</h2>
+                <div class="review-list">
+                    <div class="review">
+                        <div class="review-header">
+                            <h3>João Silva</h3>
+                            <div class="rating">★★★★☆</div>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vehicula ex ut ex cursus, in varius velit gravida. Nulla facilisi.</p>
+                    </div>
+                    <div class="review">
+                        <div class="review-header">
+                            <h3>Maria Oliveira</h3>
+                            <div class="rating">★★★★★</div>
+                        </div>
+                        <p>A entrega foi rápida e o produto correspondeu às expectativas. Ótima compra, recomendo!</p>
+                    </div>
+                    <div class="review">
+                        <div class="review-header">
+                            <h3>Carlos Pereira</h3>
+                            <div class="rating">★★★☆☆</div>
+                        </div>
+                        <p>O produto é bom, mas poderia melhorar em alguns aspectos. A qualidade é aceitável para o preço.</p>
+                    </div>
+                    <!-- Adicione mais avaliações aqui -->
+                </div>
+             
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Loja Exemplo. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

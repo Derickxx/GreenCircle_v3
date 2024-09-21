@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esqueceu a senha</title>
+    <script src="script.js"></script>
+	<link rel="stylesheet" href="folhasenha.css">
+</head>
+<nav>
+    <a href="home.html"><img class="back" src="back-button.png" alt=""></a>
+    <h1>GreenCycle</h1>
+    <a href="home.html"><img class="back2" src=" icons8-logout-50.png" alt=""></a>
+
+</nav>
+<body>
+   
+    
+    <div class="container-esqueceu">
+        <h2>Esqueceu a senha</h2>
+        <p>Informe o seu endereço de e-mail e nós enviaremos um link de redefinição de senha para você.</p>
+        <form th:action="{@/greencicle/usuario/add-usuario}" th:object="${usuario}" method="post" onsubmit="return verificar()">
+            <input type="email" name="email" placeholder="Seu endereço de e-mail" id="email">
+            <br>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="/css/folha.css">
+    <script src="/js/script.js"></script>   
+    <nav>
+        <a href="#" onclick="goBack()"><img class="back" src="back-button.png" alt=""></a>
+        <h1>GreenCycle</h1>
+        <a href="@{/home}"><img class="back2" src=" /images/icons8-logout-50.png" alt=""></a>
+    
+    </nav>
+</head>
+<body>
+   
+    <div class="container">
+        <h1>Cadastro</h1>
+        <form  th:action="{@/GreenCicle_v3/usuario/add-usuario}" th:object="${usuario}" metod="post" onsubmit="cadastra()">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" th:fild="*{nome}" id="username" name="nome" >
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email"th:fild="*{email}" id="email" name="email" >
+            </div>
+            <div class="form-group">
+                <label for="senha">Senha:</label>
+                <input type="password" th:fild="*{senha}" name="senha" id="senha" onchange=" confereSenha()">
+            </div>
+            <div class="form-group">
+                <label for="senha">Confirma Senha:</label>
+                <input type="password"  name="conf_senha" id="rep_senha" onchange=" confereSenha()">
+            </div>
+            <input type="submit" value="Cadastrar" onsubmit="check()">
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,1018 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo geral */
+body {
+    background-color: rgb(0, 0, 0);
+    color: aliceblue;
+}
+
+/* Fundo da página */
+#fundo {
+    position: fixed;
+    z-index: -1;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+#fundo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Estilo principal */
+.principal {
+    text-align: center;
+    padding: 2rem; /* Adiciona espaçamento interno */
+}
+
+/* Cabeçalho */
+header .interface {
+    display: flex;
+    justify-content: space-around;
+    align-items: center; /* Centraliza verticalmente */
+    color: aliceblue;
+    width: 100%;
+    height: 5rem; /* Ajusta a altura do cabeçalho */
+    font-size: 1.875rem; /* 30px */
+    padding: 0 1rem; /* Adiciona espaçamento interno */
+}
+
+.links {
+    text-decoration: none;
+    color: green;
+    margin: 0 1rem; /* Ajusta o espaçamento horizontal entre links */
+    padding: 0 0.5rem;
+    position: relative;
+}
+
+.links:hover {
+    color: #bebebe;
+    cursor: pointer;
+}
+
+.links::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background-color: #bebebe;
+    transition: width 0.3s ease;
+}
+
+.links:hover::after {
+    width: 100%;
+}
+
+/* Botões */
+.btn-1 {
+    background-color: transparent;
+    border: 4px solid #bebebe;
+    border-radius: 30px;
+    color: aliceblue;
+    padding: 0.5rem 1rem; /* Ajusta o padding para os botões */
+    font-size: 1.0625rem; /* 17px */
+    margin: 1rem 0; /* Espaçamento vertical entre botões */
+}
+
+.btn-1:hover {
+    color: #bebebe;
+    border: 0;
+    background-color: chartreuse;
+    box-shadow: 0px 0px 8px chartreuse;
+    transform: scale(1.05);
+}
+
+/* Navegação */
+.nav-1 {
+    display: flex;
+    justify-content: space-around;
+    margin: 2rem 0; /* Adiciona espaçamento vertical ao redor da navegação */
+}
+
+/* Títulos e conteúdo */
+.title-content {
+    position: relative;
+    margin: 2rem 0; /* Ajusta o espaçamento vertical dos títulos */
+    padding: 5rem 8.1rem; /* Adiciona espaçamento interno */
+}
+
+.title-1 {
+    color: rgb(174, 199, 129);
+}
+
+.p-1 {
+    line-height: 2;
+    margin: 1rem 0; /* Ajusta o espaçamento vertical dos parágrafos */
+}
+
+.btn-link {
+    font-size: 1rem;
+    text-decoration: none;
+    margin: 1rem; /* Espaçamento ao redor do link */
+}
+
+.btn-2, .btn-3 {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    color: aliceblue;
+    transform: skew(-10deg);
+}
+
+.btn-2 {
+    border: none;
+    background-color: green;
+}
+
+.btn-3 {
+    margin-left: 1rem; /* Ajusta o espaçamento à esquerda do botão 3 */
+    border: 2px solid green;
+    background-color: transparent;
+}
+
+.btn-2:hover, .btn-3:hover {
+    box-shadow: 0px 0px 8px green;
+    transform: skew(-10deg);
+}
+
+/* Cartões */
+.main {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Permite que os cartões se movam para a linha seguinte se necessário */
+    gap: 2rem; /* Espaçamento entre os cartões */
+    margin-bottom: 2rem; /* Ajusta o espaçamento inferior */
+}
+
+.master {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card, .card-1, .card-2 {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+    color: #fff;
+    text-align: center;
+    background-size: cover;
+    background-color: transparent;
+    transition: opacity 0.3s ease;
+    margin: 1rem; /* Adiciona espaçamento ao redor dos cartões */
+}
+
+.card{
+    background: url("/images/marinha.jpg") no-repeat ;
+}
+
+.card-1{
+    background: url("/images/adubo.jpg") no-repeat ;
+}
+.card-2{
+    background: url("/images/muda.jpg") no-repeat ;
+}
+
+
+.card:hover, .card-1:hover, .card-2:hover {
+    opacity: 0.8;
+}
+
+.card-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    padding: 1rem; /* Adiciona espaçamento interno ao conteúdo do cartão */
+}
+
+.card-title {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.card-description {
+    margin: 0.5rem 0 0;
+}
+
+/* Seção de cartões de destaque */
+.highlight-cards {
+    padding: 2rem;
+}
+
+.highlight-cards .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.highlight-cards .title-2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #166d0a;
+}
+
+.highlight-cards .card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: transparent;
+    margin-bottom: 1rem; /* Adiciona espaçamento inferior aos cartões de destaque */
+}
+
+.highlight-cards .card-img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.highlight-cards .card-img-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 1rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.highlight-cards .card-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.highlight-cards .card-text {
+    font-size: 1rem;
+}
+
+.highlight-cards .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Fim */
+.end {
+    position: relative;
+    margin: 0 auto;
+}
+
+/* Navegação dropdown */
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-list li {
+    position: relative;
+    margin: 0 1rem; /* Espaçamento horizontal entre itens da lista */
+}
+
+.nav-list a {
+    display: block;
+    color: #fff;
+    padding: 0.875rem 1.25rem; /* Ajusta o padding dos itens da lista */
+    text-decoration: none;
+    text-align: center;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #fff;
+    padding: 0.75rem 1rem; /* Ajusta o padding dos itens dropdown */
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    color: chartreuse;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.title-eco {
+    margin: 5rem 0 2rem 11vw; /* Ajusta margens para melhor alinhamento */
+}
+
+.title-2 {
+    color: rgb(174, 199, 129);
+}
+
+.p-2 {
+    color: aliceblue;
+}
+
+/* Seção Destaques do Mês */
+#destaques-mes {
+    padding: 2rem;
+}
+
+#destaques-mes .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem; /* Ajusta o espaçamento entre os cartões */
+}
+
+#destaques-mes .title-2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #166d0a;
+}
+
+#destaques-mes .card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: transparent;
+    margin-bottom: 2rem; /* Ajusta o espaçamento inferior dos cartões */
+}
+
+#destaques-mes .card-img {
+    height: 200px;
+    object-fit: cover;
+}
+
+#destaques-mes .card-img-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 1rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+#destaques-mes .card-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+#destaques-mes .card-text {
+    font-size: 1rem;
+}
+
+#destaques-mes .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+span {
+    color: aliceblue;
+}
+
+/* Carrossel */
+.carrossel {
+    position: relative;
+    max-width: 600px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slides{
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.slide img {
+    width: 100%;
+    display: block;
+}
+
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem; /* Ajusta o padding dos botões */
+    font-size: 1.125rem; /* 18px */
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+button.prev {
+    left: 0;
+}
+
+button.next {
+    right: 0;
+}
+
+/* Catálogo */
+.catalog {
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem;
+}
+
+.catalog h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem; /* Espaçamento entre os produtos */
+    justify-content: center;
+}
+
+.product {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    padding: 1rem;
+    margin-bottom: 2rem; /* Espaçamento inferior dos produtos */
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+}
+
+.product h2 {
+    margin: 1rem 0; /* Ajusta o espaçamento vertical do título do produto */
+    font-size: 1.125rem; /* 18px */
+}
+
+.product p {
+    font-size: 0.875rem; /* 14px */
+    color: #555;
+}
+
+.price {
+    display: block;
+    margin-top: 0.5rem; /* Ajusta o espaçamento superior do preço */
+    font-size: 1rem; /* 16px */
+    font-weight: bold;
+    color: #333;
+}
+
+/* Botão para acessar o produto */
+.btn-product {
+    display: inline-block;
+    background-color: green;
+    color: aliceblue;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 1rem; /* Espaçamento acima do botão */
+}
+
+.btn-product:hover {
+    background-color: chartreuse;
+    box-shadow: 0px 0px 8px chartreuse;
+}
+/* Animação de desvanecimento e deslizamento para o título principal */
+@keyframes fadeInSlide {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.title-content {
+    animation: fadeInSlide 1s ease-out;
+}
+
+/* Animação de desvanecimento para os elementos da página */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-out;
+}
+
+/* Adicione uma leve animação ao carrossel */
+.carrossel {
+    opacity: 0;
+    animation: fadeIn 2s ease-out forwards;
+}
+
+/* Adicione uma leve animação ao catálogo */
+.catalog {
+    opacity: 0;
+    animation: fadeIn 2s ease-out 0.5s forwards;
+}
+
+/*-------------------------- PRODUTO 1 ------------------------*/
+/* Reset básico */
+
+
+.header-container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav a {
+    color: #2c2929;
+    text-decoration: none;
+    margin: 0 1rem;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo principal */
+.product-description {
+    display: flex;
+    width: 90%;
+    margin: 2rem auto;
+    background: #000000;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-images {
+    flex: 1;
+    padding-right: 1rem;
+}
+
+.main-image {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.thumbnail-images {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.thumbnail-images img {
+    width: 30%;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.product-details {
+    flex: 2;
+}
+
+.product-details h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.price-prod1 {
+    font-size: 1.25rem;
+    color: #e60012;
+    margin-bottom: 1rem;
+}
+
+.rating {
+    margin-bottom: 1rem;
+}
+
+.buy-button, .add-to-cart {
+    background: green;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-right: 1rem;
+    transition: background 0.3s ease;
+}
+
+.buy-button:hover, .add-to-cart:hover {
+    background: rgb(0, 77, 0);
+}
+
+.product-info h2 {
+    margin: 1rem 0;
+}
+
+.product-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.product-info li {
+    margin-bottom: 0.5rem;
+}
+
+.reviews {
+    margin-top: 2rem;
+}
+
+.review {
+    background: #f9f9f9;
+    border-radius: 5px;
+    color: black;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.view-all-reviews {
+    color: #0073e6;
+    text-decoration: none;
+}
+
+.view-all-reviews:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background: #ffffff;
+    color: #554a4a;
+    text-align: center;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+
+/*----------------------- Catalogo-------------------  */
+
+.highlight-section {
+    padding: 20px;
+    background-color: #ffffff; /* Cor de fundo da caixa */
+    border-radius: 8px; /* Borda arredondada */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra da caixa */
+    max-width: 1200px; /* Largura máxima da caixa */
+    margin: 20px auto; /* Margem centralizada automática */
+}
+
+.highlight-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas iguais */
+    grid-template-rows: repeat(2, 1fr); /* 2 linhas iguais */
+    gap: 20px; /* Espaçamento entre os itens */
+    justify-items: center; /* Centraliza os itens horizontalmente na célula */
+    align-items: center; /* Centraliza os itens verticalmente na célula */
+}
+
+.coluna_foto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 200px; /* Largura do contêiner */
+    height: 250px; /* Altura do contêiner para incluir o texto */
+    padding: 10px;
+}
+
+.coluna_foto img {
+    border-radius: 8px;
+    width: 100%;
+    height: 150px; /* Altura da imagem */
+    object-fit: cover;
+}
+
+.texto {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #333;
+    line-height: 1.4;
+}
+    .texto:hover{
+        color:chartreuse;
+
+    }
+
+
+.carousel {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 500%;
+}
+
+.carousel-images img {
+    width: 20%; /* Ajuste o tamanho da imagem conforme necessário */
+    height: auto;
+}
+.category-section {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.category-section h2 {
+    margin-bottom: 20px;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 150px); /* Três colunas de largura fixa */
+    gap: 80px;
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    align-items: center; /* Alinha os itens verticalmente no centro */
+    max-width: 1000px; /* Ajusta o tamanho máximo da grid se necessário */
+    width: 100%;
+}
+
+.category-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 150px; /* Largura fixa para itens circulares */
+    height: 150px; /* Altura fixa para itens circulares */
+    border-radius: 50%; /* Torna o item circular */
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.category-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%; /* Torna a imagem circular */
+}
+
+.category-item h3 {
+    margin: 10px 0;
+    font-size: 1rem;
+    color: #333;
+}
+
+.category-item:hover {
+    transform: scale(1.05);
+}
+
+.search-header {
+   
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    max-width: 800px;
+    width: 100%;
+}
+
+#search {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    margin-right: 10px;
+}
+
+#search-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: green;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#search-button:hover {
+    box-shadow: 0px 0px 8px green;
+}
+
+
+.dest-dia-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ajusta a altura para ocupar toda a altura da tela */
+    padding: 0px;
+}
+
+.dest-dia-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 900px; /* Largura máxima do card */
+    width: 100%;
+    background-color: white;
+}
+
+.dest-dia-image {
+    width: 100%;
+    height: 300px; /* Altura fixa da imagem */
+    object-fit: cover;
+    border-bottom: 2px solid #ddd; /* Linha fina abaixo da imagem */
+}
+
+.dest-dia-details {
+    padding: 20px;
+}
+
+.dest-dia-details h1 {
+    margin: 0 0 10px;
+    font-size: 2rem;
+    color: #333;
+}
+
+.dest-dia-details p {
+    margin: 0 0 20px;
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+.dest-dia-button {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1rem;
+    color: white;
+    background-color: #007bff;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.dest-dia-button:hover {
+    background-color: #0056b3;
+}
+
+.compra-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+}
+.compra-container > label{ 
+    color: black;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn-checkout {
+    background-color: #28a745;
+    color: white;
+    padding: 15px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-checkout:hover {
+    background-color: #218838;
+}
+
+.resumo-compra {
+    margin-bottom: 30px;
+}
+
+.resumo-compra h2 {
+    margin-bottom: 10px;
+}
+
+.resumo-compra p {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+label{
+    color: #000000 ;
+}
+.popup {
+    display: none; /* Oculta a pop-up por padrão */
+    position: fixed;
+  
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: #fff;
+    padding: 20px;
+    color: #000000;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+}
+
+.popup-content button {
+    background-color: #28a745;
+    border: none;
+    color:#fff;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.popup-content button:hover {
+    background-color: #28a745;
+}

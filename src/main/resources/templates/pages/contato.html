@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="folha.css">
+    <script src="script.js"></script>   
+    <nav>
+        <a href="@{/home}"><img class="back" src="/image/back-button.png" alt=""></a>
+        <h1>Green Cicle</h1>
+        <a href="@{/home}"><img class="back2" src=" /image/icons8-logout-50.png" alt=""></a>
+    
+    </nav>
+</head>
+<body>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div class="container">
+        <h1>nos contate</h1>
+        <form  action="#{/home}" onsubmit=" contato()">
+            <div class="form-group">
+            <div class="agrupar1">
+                <label for="nome">Nome:</label>
+                <input type="text" id="username" name="nome" >
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" >
+            </div>
+        </div>
+            <div class="form-group">
+             <div class="agrupar2">
+                <label for="senha">número</label>
+                <input type="tel" id="tel" name="tel"   />
+            </div>
+           
+            <label for="mensagem">menssagem:</label>
+            <textarea name="" id="mensage" cols="30" rows="10"></textarea>
+            </div>
+
+            <input type="submit" value="Cadastrar" onclick=" check()">
+        </form>
+    </div>
+</body>
+</html>

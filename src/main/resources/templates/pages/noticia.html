@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="universalStyle.css">
+    <script src="script-home.js"></script>
+</head>
+<body>
+    <header class="search-header">
+        <div class="search-container">
+            <input type="text" id="search" placeholder="Pesquisar...">
+            <button type="button" id="search-button">Buscar</button>
+        </div>
+    </header>
+    <header>
+        <div class="interface">
+            <!-- Navegação principal -->
+            <nav class="nav-1">
+                <a href="home.html" class="links">Home</a>
+                <a href="noticia.html" class="links">Notícia</a>
+                <a href="contato.html" class="links">Contato</a>
+            </nav>
+
+            <!-- Navegação adicional com menu suspenso -->
+            <nav class="navbar">
+                <ul class="nav-list">
+                    <li class="dropdown">
+                        <a href="#" class="links">Menu</a>
+                        <div class="dropdown-content">
+
+                            <a href="perfil.html">Perfil</a>
+                            <a href="sobre.html">Sobre</a>
+                            <a href="login.html">Login</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>  
+    </header>
+
+    <!-- Seção do carrossel de imagens -->
+    <div class="carrossel fade-in">
+        <div class="slides">
+            <div class="slide">
+                <img src="planet.jpg" alt="Imagem 1">
+            </div>
+            <div class="slide">
+                <img src="ibama.jpg" alt="Imagem 2">
+            </div>
+            <div class="slide">
+                <img src="turtle.jpg" alt="Imagem 3">
+            </div>
+        </div>
+        <!-- Botões de navegação do carrossel -->
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+
+
+<section class="category-section">
+    <h2>Categorias</h2>
+    <div class="category-grid">
+        <div class="category-item">
+        <img src="mar.jpg" alt="Categoria 4">
+            <h3>Categoria 4</h3>
+        </div>
+        <div class="category-item">
+            <img src="mar.jpg" alt="Categoria 5">
+            <h3>Categoria 5</h3>
+        </div>
+        <div class="category-item">
+            <img src="mar.jpg" alt="Categoria 6">
+            <h3>Categoria 6</h3>
+        </div>
+    </div>
+</section>
+<section class="dest-dia-container">
+    <div class="dest-dia-card">
+        <img src="mar.jpg" alt="Destaque do Dia" class="dest-dia-image">
+        <div class="dest-dia-details">
+            <h1>Destaque do Dia</h1>
+            <p>Descubra as principais notícias e eventos que estão agitando o mundo hoje. Não perca as informações mais importantes e impactantes do dia!</p>
+            <a href="#" class="dest-dia-button">Leia mais</a>
+        </div>
+    </div>
+</section>
+<section class="highlight-section">
+    <h2>Destaque do Dia</h2>
+    <div class="highlight-grid">
+        <div class="coluna_foto">
+            <img src="turtle.jpg" alt="Tartaruga" height="200" width="200" />
+            <h4 class="texto">Como o histórico Tratado de Proteção do Alto-Mar vai preservar quase metade da superfície da Terra</h4>
+        </div>
+        <div class="coluna_foto">
+            <img src="termometro.jpg" alt="Termômetro" height="200" width="200" />
+            <h4 class="texto">Sol do meio-dia não é o mais quente; outro pode ser ainda pior</h4>
+        </div>
+        <div class="coluna_foto">
+            <img src="ibama.jpg" alt="Ibama" height="200" width="200" />
+            <h4 class="texto">Garimpo ilegal tem prejuízo de R$ 1 bi com ações na Amazônia, calcula Ibama</h4>
+        </div>  
+        <div class="coluna_foto">
+            <img src="pobreza.jpg" alt="Pobreza" height="200" width="200" />
+            <h4 class="texto">Maior intensidade do El Niño: o que deve acontecer com cada região do país</h4>
+        </div>
+        <div class="coluna_foto">
+            <img src="mar.jpg" alt="Mar" height="200" width="200" />
+            <h4 class="texto">Alerta: onda de calor impacta o mundo</h4>
+        </div>  
+        <div class="coluna_foto">
+            <img src="outra.jpg" alt="Outra" height="200" width="200" />
+            <h4 class="texto">Notícia Extra: Algo mais interessante</h4>
+        </div>  
+    </div>
+</section>
+
+ <!-- Rodapé da página -->
+ <footer class="end">
+    <p>&copy; 2024 GreenCicle. Todos os direitos reservados.</p>
+</footer>
+</body>
+</html>
