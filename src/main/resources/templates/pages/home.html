@@ -29,9 +29,9 @@
         <div class="interface">
             <!-- Navegação principal -->
             <nav class="nav-1">
-                <a href="home.html" class="links">Home</a>
-                <a href="noticia.html" class="links">Doações</a>
-                <a href="contato.html" class="links">Contato</a>
+                <a href="@{/home}" class="links">Home</a>
+                <a href="@{/noticia}" class="links">Doações</a>
+                <a href="@{/contato}" class="links">Contato</a>
             </nav>
 
             <!-- Navegação adicional com menu suspenso -->
@@ -41,8 +41,8 @@
                         <a href="#" class="links">Menu</a>
                         <div class="dropdown-content">
 
-                            <a href="perfil.html">Perfil</a>
-                            <a href="sobre.html">Sobre</a>
+                            <a href="@{/perfil}">Perfil</a>
+                            <a href="@{/sobre}">Sobre</a>
                             <a th:href="@{/login}">Login</a>
                             
                         </div>
@@ -57,7 +57,7 @@
         <div class="title-content">
             <h1 class="title-1">Quero <span>doar</span></h1>
             <p class="p-1">Doar é muito importante e você pode ajudar muitas pessoas. Cadastre-se.</p>
-            <a class="btn-link" href="cadastro.html">
+            <a class="btn-link" href="@{/cadastro}">
                 <button type="button" class="btn-2">Quero doar agora</button>
             </a>
             <a class="btn-link" href="#destaques">
@@ -187,7 +187,7 @@
                 <h2>Produto 1</h2>
                 <p>Descrição do produto 1.</p>
                 <span class="price">quatidade: 12</span>
-                <a href="produto1.html" class="btn-product">Ver Produto</a>
+                <a href="@{/produto1}" class="btn-product">Ver Produto</a>
             </div>
             <!-- Repetir para cada produto -->
             <div class="product">
@@ -195,35 +195,35 @@
                 <h2>Produto 2</h2>
                 <p>Descrição do produto 2.</p>
                 <span class="price">quatidade: 09</span>
-                <a href="produto2.html" class="btn-product">Ver Produto</a>
+                <a href="@{/produto2}" class="btn-product">Ver Produto</a>
             </div>
             <div class="product">
                 <img src="/images/flor6.jpg" alt="Produto 3">
                 <h2>Produto 3</h2>
                 <p>Descrição do produto 3.</p>
                 <span class="price">quatidade: 07</span>
-                <a href="produto6.html" class="btn-product">Ver Produto</a>
+                <a href="@{/produto6}" class="btn-product">Ver Produto</a>
             </div>
             <div class="product">
                 <img src="/images/flor6.jpg" alt="Produto 4">
                 <h2>Produto 4</h2>
                 <p>Descrição do produto 4.</p>
                 <span class="price">quatidade: 11</span>
-                <a href="produto6.html" class="btn-product">Ver Produto</a>
+                <a href="@{/produto6}" class="btn-product">Ver Produto</a>
             </div>
             <div class="product">
                 <img src="/images/flor6.jpg" alt="Produto 5">
                 <h2>Produto 5</h2>
                 <p>Descrição do produto 5.</p>
                 <span class="price">quatidade: 22</span>
-                <a href="produto5.html" class="btn-product">Ver Produto</a>
+                <a href="@{/produto5}" class="btn-product">Ver Produto</a>
             </div>
             <div class="product">
                 <img src="/images/flor6.jpg" alt="Produto 6">
                 <h2>Produto 6</h2>
                 <p>Descrição do produto 6.</p>
                 <span class="price">quatidade: 01</span>
-                <a href="produto6.html" class="btn-product">Ver Produto</a>
+                <a href="@{/produto6}" class="btn-product">Ver Produto</a>
             </div>
         </div>
     </div>

@@ -173,9 +173,9 @@
         <div class="profile-header">
             <img id="profile-avatar" src="avatar.jpg" alt="Avatar do Usuário">
             <div>
-                <h1 id="profile-name">Nome do Usuário</h1>
-                <p id="profile-email">Email: usuario@example.com</p>
-                <p id="profile-phone">Telefone: (11) 1234-5678</p>
+                <h1 id="profile-name">Nome do Usuário: <span th:text="${session.usuarioLogado.nome}"></span></h1>
+                <p id="profile-email">Email: <span th:text="${session.usuarioLogado.email}"></span></p>
+                <p id="profile-phone">Acesso: <span th:text="${session.usuarioLogado.nivelAcesso}"></span></p>
             </div>
         </div>
         <div class="profile-details">

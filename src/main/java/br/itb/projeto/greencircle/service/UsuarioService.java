@@ -27,12 +27,11 @@ public class UsuarioService {
 		
 		Usuario usuario = usuarioRepository.findByEmail(email);
 		
-		//String _senha = Base64.getEncoder().encodeToString(senha.getBytes());
+		String _senha = Base64.getEncoder().encodeToString(senha.getBytes());
 		
 		if (usuario != null && usuario.getStatusUsuario().equals("ATIVO")) {
 			
-			//if (usuario.getSenha().equals(_senha)) {
-			if (usuario.getSenha().equals(senha)) {
+			if (usuario.getSenha().equals(_senha)) {
 				
 				return usuario;
 			

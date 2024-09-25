@@ -38,7 +38,44 @@ public class UsuarioController {
 	private String noImage = "/images/perfil.png";
 
 	
+	@GetMapping("/login")
+	public String getNovoLogin(ModelMap model) {
 
+		model.addAttribute("usuario", new Usuario());
+		model.addAttribute("serverMessage", "");
+		return "pages/Login";
+	}
+	
+	@PostMapping("/acessar")
+	public String acessar(ModelMap model,
+			@RequestParam("email") String email, 
+			@RequestParam("senha") String senha, HttpSession session) {
+		
+		Usuario usuarioLogado = usuarioService.acessar(email, senha);
+
+		if (usuarioLogado != null) {
+			
+			session.setAttribute("usuarioLogado", usuarioLogado);
+			model.addAttribute("usuario", usuarioLogado);
+			
+			if (usuarioLogado.getNivelAcesso().equals("ADMIN")) {
+				
+				return "redirect:/usuario/perfil";
+				
+			} else if (usuarioLogado.getNivelAcesso().equals("USER")) {
+				
+				return "redirect:/usuario/perfil";
+				
+			}
+	
+		}
+		
+		serverMessage = "Dados Incorretos!";
+		model.addAttribute("serverMessage", serverMessage);
+		
+		return "redirect:/usuario/login";
+	}
+	
 	
 	@GetMapping("/usuario-novo")
 	public String getNovoUsuario(ModelMap model) {
@@ -87,6 +124,16 @@ public class UsuarioController {
 		model.addAttribute("serverMessage", serverMessage);
 
 		return "user";
+	}
+	
+	@GetMapping("/perfil")
+	public String goPerfil(ModelMap model, HttpSession session) {
+
+		model.addAttribute("usuario", session.getAttribute("usuarioLogado"));
+		model.addAttribute("noImage", noImage);
+		model.addAttribute("serverMessage", serverMessage);
+
+		return "pages/perfil";
 	}
 
 	@GetMapping("/logoff")

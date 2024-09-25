@@ -25,7 +25,7 @@ public class LoginController {
 
 		model.addAttribute("login", new Login());
 		model.addAttribute("serverMessage", "");
-		return "pages/Login";
+		return "login";
 	}
 	
 	@PostMapping("/acessar")
