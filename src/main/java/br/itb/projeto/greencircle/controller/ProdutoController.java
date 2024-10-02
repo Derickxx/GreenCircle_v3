@@ -116,7 +116,7 @@ public class ProdutoController {
 		serverMessage = "Produto cadastrado com sucesso!!!";
 
 		// REDIRECIONA PARA O END_POINT INDICADO
-		return "redirect:/api/produto/ver/" + p.getId();
+		return "redirect:/produto/ver/" + p.getId();
 	}
 	
 	// GRAVA AS ALTERAÇÕES DO PRODUTO

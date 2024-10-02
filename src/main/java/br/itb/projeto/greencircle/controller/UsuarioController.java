@@ -4,12 +4,14 @@ import java.io.IOException;
 import java.util.Base64;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -17,6 +19,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import br.itb.projeto.greencircle.model.entity.Login;
 import br.itb.projeto.greencircle.model.entity.Usuario;
+import br.itb.projeto.greencircle.model.repository.UsuarioRepository;
 import br.itb.projeto.greencircle.service.UsuarioService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletResponse;
@@ -40,43 +43,46 @@ public class UsuarioController {
 	
 	@GetMapping("/login")
 	public String getNovoLogin(ModelMap model) {
-
-		model.addAttribute("usuario", new Usuario());
-		model.addAttribute("serverMessage", "");
-		return "pages/Login";
+	    model.addAttribute("usuario", new Usuario()); // Inicializa o objeto
+	    model.addAttribute("serverMessage", "");
+	    return "/pages/index/login"; // Verifique se esta página existe
 	}
 	
+	
+		
 	@PostMapping("/acessar")
 	public String acessar(ModelMap model,
-			@RequestParam("email") String email, 
-			@RequestParam("senha") String senha, HttpSession session) {
-		
-		Usuario usuarioLogado = usuarioService.acessar(email, senha);
-
-		if (usuarioLogado != null) {
-			
-			session.setAttribute("usuarioLogado", usuarioLogado);
-			model.addAttribute("usuario", usuarioLogado);
-			
-			if (usuarioLogado.getNivelAcesso().equals("ADMIN")) {
-				
-				return "redirect:/usuario/perfil";
-				
-			} else if (usuarioLogado.getNivelAcesso().equals("USER")) {
-				
-				return "redirect:/usuario/perfil";
-				
-			}
-	
-		}
-		
-		serverMessage = "Dados Incorretos!";
-		model.addAttribute("serverMessage", serverMessage);
-		
-		return "redirect:/usuario/login";
+	        @RequestParam("email") String email, 
+	        @RequestParam("senha") String senha, HttpSession session) {
+	    
+	    Usuario usuarioLogado = usuarioService.acessar(email, senha);
+System.out.println("usuarioLogado" + usuarioLogado);
+	    if (usuarioLogado != null) {
+	        session.setAttribute("usuarioLogado", usuarioLogado);
+	        model.addAttribute("usuario", usuarioLogado);
+	        
+	        if (usuarioLogado.getNivelAcesso().equals("ADMIN")) {
+	            return "redirect:/usuario/perfil"; // Corrigir o redirecionamento
+	        } else {
+	            return "redirect:/usuario/perfil";
+	        }
+	    }
+	    
+	    serverMessage = "Dados Incorretos!";
+	    model.addAttribute("serverMessage", serverMessage);
+	    
+	    return "redirect:/usuario/login"; // Certifique-se de que esta página existe
 	}
-	
-	
+	@GetMapping("/perfil")
+	public String goPerfil(ModelMap model, HttpSession session) {
+
+		model.addAttribute("usuario", session.getAttribute("usuarioLogado"));
+		model.addAttribute("noImage", noImage);
+		model.addAttribute("serverMessage", serverMessage);
+
+		return "pages/perfil";
+	}
+
 	@GetMapping("/usuario-novo")
 	public String getNovoUsuario(ModelMap model) {
 
@@ -126,15 +132,7 @@ public class UsuarioController {
 		return "user";
 	}
 	
-	@GetMapping("/perfil")
-	public String goPerfil(ModelMap model, HttpSession session) {
-
-		model.addAttribute("usuario", session.getAttribute("usuarioLogado"));
-		model.addAttribute("noImage", noImage);
-		model.addAttribute("serverMessage", serverMessage);
-
-		return "pages/perfil";
-	}
+	
 
 	@GetMapping("/logoff")
 	public String sair(ModelMap model, HttpSession session) {
@@ -208,7 +206,7 @@ public class UsuarioController {
 			
 		} 
 	
-		return "redirect:/usuario/usuario-novo";
+		return "redirect:/usuario/login";
 	}
 	
 	@PostMapping("/inativar/{id}")
@@ -326,6 +324,12 @@ public class UsuarioController {
 		}
 
 		response.getOutputStream().close();
+	}
+	
+	@GetMapping("/cadastrar")
+	public String cadastro(ModelMap model) {
+		model.addAttribute("usuario", new Usuario());
+		return "pages/index/signup";
 	}
 	
 

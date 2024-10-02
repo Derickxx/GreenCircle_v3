@@ -19,7 +19,7 @@
     <div class="container-esqueceu">
         <h2>Esqueceu a senha</h2>
         <p>Informe o seu endereço de e-mail e nós enviaremos um link de redefinição de senha para você.</p>
-        <form th:action="{@/greencicle/usuario/add-usuario}" th:object="${usuario}" method="post" onsubmit="return verificar()">
+        <form th:action="{@/greencicle/usuario/add-usuario}" th:object="${usuario}" method="post" onsubmit=" verificar()">
             <input type="email" name="email" placeholder="Seu endereço de e-mail" id="email">
             <br>
             <button type="submit">Enviar</button>

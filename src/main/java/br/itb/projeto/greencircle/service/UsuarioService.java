@@ -1,6 +1,7 @@
 package br.itb.projeto.greencircle.service;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.Base64;
 import java.util.List;
 
@@ -57,8 +58,10 @@ public class UsuarioService {
 
 		usuario.setFoto(null);
 		String senha = Base64.getEncoder().encodeToString("12345678".getBytes());
+		usuario.setNivelAcesso("USER");
 		usuario.setSenha(senha);
 		usuario.setStatusUsuario("ATIVO");
+		usuario.setDataCadastro(LocalDateTime.now());
 		
 		return usuarioRepository.save(usuario);
 	}

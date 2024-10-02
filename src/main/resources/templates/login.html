@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <link rel="stylesheet" href="/css/style.css">
+     <link rel="stylesheet" href="/css/styles.min.css">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     
     <title>Login</title>
   </head>
   <body>
+ <!-- <div th:replace="~{fragments :: header}"></div>-->
     <div class="container">
 		<form class="form-login" action="#" th:action="@{/usuario/acessar}" th:object="${usuario}" method="post">
 			<div class="text-center">
@@ -20,17 +22,18 @@
 			</div>
 			<div class="mb-3">
 				<label for="inputEmail" class="form-label fw-bold fs-5">Email:</label>
-				<input type="email" class="form-control text-center fw-bold fs-5" th:field="*{email}"
+				<input type="email" class="form-control text-center fw-bold fs-5" 
 					id="inputEmail" aria-describedby="emailHelp">
 			</div>
 			<div class="mb-1">
 				<label for="inputSenha" class="form-label fw-bold fs-5">Senha:</label>
-				<input type="password" class="form-control text-center fw-bold fs-5" th:field="*{senha}"
+				<input type="password" class="form-control text-center fw-bold fs-5"
 					id="inputSenha">
 			</div>
 			<div class="text-center p-2 rounded-2">
 				<span class="fw-bold fs-5 text-danger" th:text="${serverMessage}"></span>
 			</div>
+			
 			<div class="my-3 d-flex justify-content-between">
 				<a th:href="@{/index}" class="btn btn-warning fw-bold fs-5">Voltar</a>
 				<button type="submit" class="btn btn-success fw-bold fs-5">Entrar</button>

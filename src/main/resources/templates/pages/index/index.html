@@ -5,10 +5,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <title>Home - Brand</title>
-  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Inter:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
-  <link rel="stylesheet" href="/css/styles.min.css">
+  <link rel="stylesheet" href="assets/css/styles.min.css">
 </head>
 
 <body>
@@ -29,17 +29,18 @@
       <div class="collapse navbar-collapse" id="navcol-1"
         style="margin-left: -117px;padding-right: 11px;padding-left: 115px;">
         <ul class="navbar-nav mx-auto">
-          <li class="nav-item"><a class="nav-link active" th:href="@{/index}">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="@{/services}">Services</a></li>
+          <li class="nav-item"><a class="nav-link active" th:href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" th:href="@{/services}">Services</a></li>
           <li class="nav-item"></li>
           <li class="nav-item"></li>
-          <li class="nav-item"><a class="nav-link" th:href="@{/contacts}">Contacts</a></li>
+          <li class="nav-item"><a class="nav-link" href="@{/contacts}">Contacts</a></li>
         </ul>
         <section></section>
         <div class="dropdown" style="padding-right: 0px;margin-right: 28px;"><a class="dropdown-toggle"
-            aria-expanded="false" aria-haspopup="true" data-bs-toggle="dropdown" href="#" style="margin-left: 6px;">Menu</a>
-          <div class="dropdown-menu"><a class="dropdown-item" th:href="@{/perfil}">Perfil</a><a class="dropdown-item" href="#">Sobre
-              nos</a><a class="dropdown-item" th:href="@{/login}">Administração</a></div>
+            aria-expanded="false" data-bs-toggle="dropdown" href="#" style="margin-left: 6px;">Menu</a>
+          <div class="dropdown-menu"><a class="dropdown-item" th:href="#">Perfil</a>
+          <a class="dropdown-item" th:href="#">Sobre nos</a>
+          <a class="dropdown-item" th:href="@{/usuario/login}">Administração</a></div>
         </div>
       </div>
     </div>
@@ -74,7 +75,7 @@
               <h2 class="fw-bold mb-2">Faça seu cadastro</h2>
               <p class="mb-0">Faça parte do nosso time para ajudar o meio ambiente</p>
             </div>
-            <div class="my-2"><a class="btn btn-primary fs-5 py-2 px-4" role="button" th:href="@{/cadastrar}">Cadastro</a></div>
+            <div class="my-2"><a class="btn btn-primary fs-5 py-2 px-4" role="button" th:href="@{/usuario/cadastrar}">Cadastro</a></div>
           </div>
         </div>
       </div>
@@ -382,7 +383,8 @@
       </div>
     </div>
   </footer>
-  <script src="/js/bootstrap.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/js/script.min.js"></script>
 </body>
 
 </html>

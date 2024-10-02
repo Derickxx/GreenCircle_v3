@@ -283,19 +283,10 @@ function toggleDeleteConfirmation() {
 
 function saveProfile() {
 	const name = document.getElementById('edit-name').value;
-	const email = document.getElementById('edit-email').value;
-	const phone = document.getElementById('edit-phone').value;
-	const address = document.getElementById('edit-address').value;
-	const dob = document.getElementById('edit-dob').value;
-	const gender = document.getElementById('edit-gender').value;
+	
 
 	document.getElementById('profile-name').textContent = name;
-	document.getElementById('profile-email').textContent = `Email: ${email}`;
-	document.getElementById('profile-phone').textContent = `Telefone: ${phone}`;
-	document.getElementById('profile-address').textContent = address;
-	document.getElementById('profile-dob').textContent = dob;
-	document.getElementById('profile-gender').textContent = gender;
-
+	
 	toggleEditForm(); // Oculta o formulário após salvar
 	alert('Perfil atualizado com sucesso!');
 }
