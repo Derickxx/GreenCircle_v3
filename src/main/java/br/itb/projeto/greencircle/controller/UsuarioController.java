@@ -45,7 +45,7 @@ public class UsuarioController {
 	public String getNovoLogin(ModelMap model) {
 	    model.addAttribute("usuario", new Usuario()); // Inicializa o objeto
 	    model.addAttribute("serverMessage", "");
-	    return "/pages/index/login"; // Verifique se esta página existe
+	    return "pages/index/login"; // Verifique se esta página existe
 	}
 	
 	
@@ -56,7 +56,7 @@ public class UsuarioController {
 	        @RequestParam("senha") String senha, HttpSession session) {
 	    
 	    Usuario usuarioLogado = usuarioService.acessar(email, senha);
-System.out.println("usuarioLogado" + usuarioLogado);
+
 	    if (usuarioLogado != null) {
 	        session.setAttribute("usuarioLogado", usuarioLogado);
 	        model.addAttribute("usuario", usuarioLogado);
@@ -257,9 +257,10 @@ System.out.println("usuarioLogado" + usuarioLogado);
 			
 		usuarioService.update(file, usuario, _foto);
 		
+		
 		serverMessage = "Dados alterados com sucesso!!!";
 		foto = "";
-		return "redirect:/usuario/verPerfil/" + id;
+		return "redirect:/usuario/login";
 	}
 	
 	

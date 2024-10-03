@@ -112,7 +112,10 @@ public class UsuarioService {
 		Usuario usuarioDatabase = findById(usuario.getId());
 		
 		usuario.setDataCadastro(usuarioDatabase.getDataCadastro());
-		
+		usuario.setEmail(usuarioDatabase.getEmail());
+		usuario.setNivelAcesso(usuarioDatabase.getNivelAcesso());
+		usuario.setSenha(usuarioDatabase.getSenha());
+		usuario.setStatusUsuario(usuarioDatabase.getStatusUsuario());
 		//BeanUtils.copyProperties(usuarioDatabase, usuario);
 		
 		if (file.getSize() == 0 && foto.length == 0) {

@@ -1,212 +1,228 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil do Usuário</title>
-      <link rel="stylesheet" href="/css/styles.min.css">
-      <link rel="stylesheet" href="/css/bootstrap.min.css">   
-    <script src="/js/script.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-  <script src="/js/script.min.js"></script>
-    <style>
-  body{
-	  color:black
-  }
-    
-        .profile-container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Perfil do Usuário</title>
+	<link rel="stylesheet" href="/css/styles.min.css">
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
+	<script src="/js/script.js"></script>
+	<script src="/js/scripts.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/script.min.js"></script>
+	<style>
+		body {
+			color: black
+		}
 
-        .profile-header {
-            display: flex;
-            align-items: center;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 20px;
-            margin-bottom: 20px;
-        }
+		.profile-container {
+			max-width: 800px;
+			margin: 20px auto;
+			padding: 20px;
+			background-color: #fff;
+			border-radius: 8px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
 
-        .profile-header img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            margin-right: 20px;
-            object-fit: cover;
-        }
+		.profile-header {
+			display: flex;
+			align-items: center;
+			border-bottom: 1px solid #ddd;
+			padding-bottom: 20px;
+			margin-bottom: 20px;
+		}
 
-        .profile-header h1 {
-            margin: 0;
-            font-size: 24px;
-            color: #333;
-        }
+		.profile-header img {
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+			margin-right: 20px;
+			object-fit: cover;
+		}
 
-        .profile-header p {
-            margin: 5px 0;
-            color: #666;
-        }
+		.profile-header h1 {
+			margin: 0;
+			font-size: 24px;
+			color: #333;
+		}
 
-        .profile-details {
-            display: flex;
-            flex-direction: column;
-        }
+		.profile-header p {
+			margin: 5px 0;
+			color: #666;
+		}
 
-        .profile-details label {
-            font-weight: bold;
-            margin-top: 10px;
-        }
+		.profile-details {
+			display: flex;
+			flex-direction: column;
+		}
 
-        .profile-details p {
-            margin: 5px 0;
-            color: #333;
-        }
+		.profile-details label {
+			font-weight: bold;
+			margin-top: 10px;
+		}
 
-        .profile-actions {
-            margin-top: 20px;
-            text-align: center;
-        }
+		.profile-details p {
+			margin: 5px 0;
+			color: #333;
+		}
 
-        .profile-actions button {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            background-color: #007bff;
-            color: #fff;
-            cursor: pointer;
-        }
+		.profile-actions {
+			margin-top: 20px;
+			text-align: center;
+		}
 
-        .profile-actions button:hover {
-            background-color: #0056b3;
-        }
+		.profile-actions button,
+		a {
+			padding: 10px 20px;
+			border: none;
+			border-radius: 4px;
+			background-color: #007bff;
+			color: #fff;
+			cursor: pointer;
+		}
 
-        .edit-profile-form,
-        .confirm-delete {
-            display: none;
-            margin-top: 20px;
-            background-color: #f9f9f9;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+		.profile-actions button:hover {
+			background-color: #0056b3;
+		}
 
-        .edit-profile-form label {
-            display: block;
-            margin: 10px 0 5px;
-        }
+		.edit-profile-form,
+		.confirm-delete {
+			display: none;
+			margin-top: 20px;
+			background-color: #f9f9f9;
+			padding: 20px;
+			border-radius: 8px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
 
-        .edit-profile-form input,
-        .edit-profile-form select {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            margin-bottom: 10px;
-        }
+		.edit-profile-form label {
+			display: block;
+			margin: 10px 0 5px;
+		}
 
-        .edit-profile-form button {
-            background-color: #28a745;
-            padding: 10px;
-            border: none;
-            border-radius: 10px;
-            color:aliceblue;
-            border: none;
-        }
+		.edit-profile-form input,
+		.edit-profile-form select {
+			width: 100%;
+			padding: 10px;
+			border: 1px solid #ddd;
+			border-radius: 4px;
+			margin-bottom: 10px;
+		}
 
-        .edit-profile-form button:hover {
-            background-color: #218838;
-            color:aliceblue;
-        }
+		.edit-profile-form button {
+			background-color: #28a745;
+			padding: 10px;
+			border: none;
+			border-radius: 10px;
+			color: aliceblue;
+			border: none;
+		}
 
-        .confirm-delete button {
-            background-color: #dc3545;
-            padding: 10px;
-            border: none;
-            border-radius: 10px;
-            color:aliceblue;
-            border: none;
-        }
+		.edit-profile-form button:hover {
+			background-color: #218838;
+			color: aliceblue;
+		}
 
-        .confirm-delete button:hover {
-            background-color: #c82333;
-            color:aliceblue;
-        }
-    </style>
+		.confirm-delete button {
+			background-color: #dc3545;
+			padding: 10px;
+			border: none;
+			border-radius: 10px;
+			color: aliceblue;
+			border: none;
+		}
+
+		.confirm-delete button:hover {
+			background-color: #c82333;
+			color: aliceblue;
+		}
+	</style>
 </head>
+
 <body>
 
 
 
 	<nav class="navbar navbar-expand-md sticky-top py-3 navbar-dark" id="mainNav">
-    <div class="container"><a class="navbar-brand d-flex align-items-center" href="/"><span
-          class="bs-icon-sm bs-icon-circle bs-icon-primary shadow d-flex justify-content-center align-items-center me-2 bs-icon"><svg
-            xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16"
-            class="bi bi-bezier">
-            <path fill-rule="evenodd"
-              d="M0 10.5A1.5 1.5 0 0 1 1.5 9h1A1.5 1.5 0 0 1 4 10.5v1A1.5 1.5 0 0 1 2.5 13h-1A1.5 1.5 0 0 1 0 11.5zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm10.5.5A1.5 1.5 0 0 1 13.5 9h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1a1.5 1.5 0 0 1-1.5-1.5zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zM6 4.5A1.5 1.5 0 0 1 7.5 3h1A1.5 1.5 0 0 1 10 4.5v1A1.5 1.5 0 0 1 8.5 7h-1A1.5 1.5 0 0 1 6 5.5zM7.5 4a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5z">
-            </path>
-            <path
-              d="M6 4.5H1.866a1 1 0 1 0 0 1h2.668A6.517 6.517 0 0 0 1.814 9H2.5c.123 0 .244.015.358.043a5.517 5.517 0 0 1 3.185-3.185A1.503 1.503 0 0 1 6 5.5zm3.957 1.358A1.5 1.5 0 0 0 10 5.5v-1h4.134a1 1 0 1 1 0 1h-2.668a6.517 6.517 0 0 1 2.72 3.5H13.5c-.123 0-.243.015-.358.043a5.517 5.517 0 0 0-3.185-3.185z">
-            </path>
-          </svg></span><span>GreenCycle</span></a><button data-bs-toggle="collapse" class="navbar-toggler"
-        data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span
-          class="navbar-toggler-icon"></span></button>
-      <div class="collapse navbar-collapse" id="navcol-1"
-        style="margin-left: -117px;padding-right: 11px;padding-left: 115px;">
-        <ul class="navbar-nav mx-auto">
-          <li class="nav-item"><a class="nav-link" th:href="@{/index}">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="@{/services}">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="@{/contacts}">Contacts</a></li>
-        </ul>
-        <section></section>
-        <div class="dropdown" style="padding-right: 0px;margin-right: 28px;"><a class="dropdown-toggle"
-            aria-expanded="false" data-bs-toggle="dropdown" href="#" style="margin-left: 6px;">Menu</a>
-          <div class="dropdown-menu"><a class="dropdown-item" th:href="@{/perfil}">Perfil</a><a class="dropdown-item" th:href="@{/sobre}">Sobre
-              nos</a><a class="dropdown-item" href="@{/login}">Administração</a></div>
-        </div>
-      </div>
-    </div>
-  </nav>
-    <div class="profile-container">
-        <div class="profile-header">
-            <img id="profile-avatar" src="avatar.jpg" alt="Avatar do Usuário">
-            <div>
-            
-                <h1 id="profile-name">Nome do Usuário: <span></span></h1>
-                <p id="profile-email">Email: <span></span></p>
-                <p id="profile-phone">Acesso: <span ></span></p>
-             
-            </div>
-        </div>
-        
-        <div class="profile-actions">
-            <button onclick="toggleEditForm()">Editar Perfil</button>
-            <button onclick="toggleDeleteConfirmation()">Excluir Perfil</button>
-        </div>
+		<div class="container"><a class="navbar-brand d-flex align-items-center" href="/"><span
+					class="bs-icon-sm bs-icon-circle bs-icon-primary shadow d-flex justify-content-center align-items-center me-2 bs-icon"><svg
+						xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+						viewBox="0 0 16 16" class="bi bi-bezier">
+						<path fill-rule="evenodd"
+							d="M0 10.5A1.5 1.5 0 0 1 1.5 9h1A1.5 1.5 0 0 1 4 10.5v1A1.5 1.5 0 0 1 2.5 13h-1A1.5 1.5 0 0 1 0 11.5zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm10.5.5A1.5 1.5 0 0 1 13.5 9h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1a1.5 1.5 0 0 1-1.5-1.5zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zM6 4.5A1.5 1.5 0 0 1 7.5 3h1A1.5 1.5 0 0 1 10 4.5v1A1.5 1.5 0 0 1 8.5 7h-1A1.5 1.5 0 0 1 6 5.5zM7.5 4a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5z">
+						</path>
+						<path
+							d="M6 4.5H1.866a1 1 0 1 0 0 1h2.668A6.517 6.517 0 0 0 1.814 9H2.5c.123 0 .244.015.358.043a5.517 5.517 0 0 1 3.185-3.185A1.503 1.503 0 0 1 6 5.5zm3.957 1.358A1.5 1.5 0 0 0 10 5.5v-1h4.134a1 1 0 1 1 0 1h-2.668a6.517 6.517 0 0 1 2.72 3.5H13.5c-.123 0-.243.015-.358.043a5.517 5.517 0 0 0-3.185-3.185z">
+						</path>
+					</svg></span><span>GreenCycle</span></a><button data-bs-toggle="collapse" class="navbar-toggler"
+				data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span
+					class="navbar-toggler-icon"></span></button>
+			<div class="collapse navbar-collapse" id="navcol-1"
+				style="margin-left: -117px;padding-right: 11px;padding-left: 115px;">
+				<ul class="navbar-nav mx-auto">
+					<li class="nav-item"><a class="nav-link" th:href="@{/index}">Home</a></li>
+					<li class="nav-item"><a class="nav-link" href="@{/services}">Services</a></li>
+					<li class="nav-item"><a class="nav-link" href="@{/contacts}">Contacts</a></li>
+				</ul>
+				<section></section>
+				<div class="dropdown" style="padding-right: 0px;margin-right: 28px;"><a class="dropdown-toggle"
+						aria-expanded="false" data-bs-toggle="dropdown" href="#" style="margin-left: 6px;">Menu</a>
+					<div class="dropdown-menu"><a class="dropdown-item" th:href="@{/perfil}">Perfil</a><a
+							class="dropdown-item" th:href="@{/sobre}">Sobre
+							nos</a><a class="dropdown-item" href="@{/login}">Administração</a></div>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<div class="profile-container">
+		<form th:action="@{/usuario/logoff}" th:object="${usuario}" method="post">
+			<div class="profile-header">
+				<img id="profile-avatar" class="img-fluid"
+					th:src="*{foto} ? @{${'/usuario/showImage/'+ session.usuarioLogado.id}} : ${noImage}"
+					alt="Avatar do Usuário">
+				<div>
+					<h1 id="profile-name">Nome do Usuário: <span th:text="${session.usuarioLogado.nome}"></span></h1>
+					<p id="profile-email">Email: <span th:text="${session.usuarioLogado.email}"></span></p>
+					<p id="profile-phone">Acesso: <span th:text="${session.usuarioLogado.nivelAcesso}"></span></p>
+				</div>
+			</div>
 
-        <div class="edit-profile-form" id="edit-profile-form">
-            <h2>Editar Perfil</h2>
-            <label for="edit-avatar">Foto de Perfil:</label>
-            <input type="file" id="edit-avatar" accept="image/*"  onchange="previewImage(event)">
-            <img id="preview-avatar" style="display: none; width: 100px; height: 100px; border-radius: 50%; margin-top: 10px; object-fit: cover;">
-            
-            <label for="edit-name">Nome:</label>
-            <input type="text" id="edit-name" value="Nome do Usuário">
-            
-         
-            <button onclick="saveProfile()">Salvar</button>
-        </div>
+			<div class="profile-actions">
+				<button onclick="toggleEditForm()">Editar Perfil</button>
+				<button onclick="toggleDeleteConfirmation()">Excluir Perfil</button>
+			</div>
+		</form>
 
-        <div class="confirm-delete" id="confirm-delete">
-            <h2>Confirmação de Exclusão</h2>
-            <p>Você tem certeza de que deseja excluir seu perfil?</p>
-            <button onclick="deleteProfile()">Excluir</button>
-            <button onclick="toggleDeleteConfirmation()">Cancelar</button>
-        </div>
-    </div>
+		<div class="edit-profile-form" id="edit-profile-form">
+			<h2>Editar Perfil</h2>
+			<form class="row g-3 shadow form-cad" enctype="multipart/form-data"
+				th:action="@{/usuario/editar/{id}(id=*{id})}" th:object="${usuario}" method="post">
+					<div class="form-group col-md-12">
+					<label for="uploadImage" class="form-label">Editar Foto de Perfil:</label>
+					<input class="form-control" type="file" onchange="preViewImg();" name="file" accept="image/*" id="uploadImage">
+				</div>
+              	<div class="form-group col-md-12">
+					<label for="preView" class="form-label">Foto:</label>
+					<img id="preView" alt="..." th:src="*{foto} ? @{${'/usuario/showImage/'+ usuario.id}} : ${noImage}"
+					class="rounded d-block  mx-auto img-fluid" />
+				</div>
+
+				<label for="edit-name">Nome:</label>
+				<input type="text" id="edit-name" th:field="*{nome}" value="Nome do Usuário">
+
+				<button type="submit">Salvar</button>
+			</form>
+		</div>
+
+		<div class="confirm-delete" id="confirm-delete">
+			<h2>Confirmação de Exclusão</h2>
+			<p>Você tem certeza de que deseja excluir seu perfil?</p>
+			<button onclick="deleteProfile()">Excluir</button>
+			<button onclick="toggleDeleteConfirmation()">Cancelar</button>
+		</div>
+	</div>
 
 </body>
+
 </html>

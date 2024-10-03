@@ -10,7 +10,8 @@ public class PageController {
 	public String index() {
 		return "pages/home";
 	}
-	
+
+
 	@GetMapping("/usuarioEdit")
 	public String usuerEdit() {
 		return "usuario-editar";
